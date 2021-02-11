@@ -26,4 +26,23 @@ const resultado = familia.map(
 console.log("RESULTADO", resultado);
 
 
+// Operacion Filter
+const adults = familia.filter(
+  function(familiar) {
+    return familiar.age >= 18;
+  }
+);
+
+console.log("adults", adults);
+
+
+const avgAge = familia.reduce(
+  function(acc, familiar) {
+    return acc + familiar.age;
+  },
+  0
+) / familia.length;
+
+
+console.log("avgAge", avgAge);
 
