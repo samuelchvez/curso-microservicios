@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservicio-usuarios
+  labels:
+    app: microservicio-usuarios
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microservicio-usuarios
+  template:
+    metadata:
+      labels:
+        app: microservicio-usuarios
+    spec:
+      containers:
+      - name: microservicio-usuarios
+        image: schavezfuentes/microservicio-usuarios
+        ports:
+        - containerPort: 8080

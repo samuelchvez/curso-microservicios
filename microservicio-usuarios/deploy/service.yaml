@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: microservicio-usuarios
+  name: microservicio-usuarios-svc
+  namespace: default
+  selfLink: /api/v1/namespaces/default/services/microservicio-usuarios-svc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: microservicio-usuarios
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

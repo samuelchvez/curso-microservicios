@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservicio-api-gateway
+  labels:
+    app: microservicio-api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservicio-api-gateway
+  template:
+    metadata:
+      labels:
+        app: microservicio-api-gateway
+    spec:
+      containers:
+      - name: microservicio-api-gateway
+        image: schavezfuentes/microservicio-api-gateway
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
